@@ -10,6 +10,7 @@ body {
     font-weight: 400;
     color: white;
     font-size: 16px;
+    background: #000;
 }
 
 a {
@@ -22,6 +23,7 @@ img {
 .wrapper {
     background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(26, 14, 1, 1) 100%);
     width: 100%;
+    overflow-x: hidden;
 }
 
 .container {
@@ -31,7 +33,8 @@ img {
 header {
     padding: 50px 0;
 }
-header .logo {
+header .logo,
+footer .block .logo {
     text-transform: uppercase;
     font-size: 29px;
     font-weight: 800;
@@ -72,14 +75,16 @@ header nav ul li:not(.active):not(.btn) a:hover {
     border-bottom: 5px solid #DC7000;
 }
 
-header nav ul li.btn a {
+header nav ul li.btn a,
+.email .block button {
     background: #fa9021;
     padding: 9px 17px;
     border-radius: 5px;
     transition: all 500ms ease;
 }
 
-header nav ul li.btn a:hover {
+header nav ul li.btn a:hover, 
+.email .block button:hover {
     background: #9e5200;
 }
 
@@ -107,7 +112,8 @@ header nav ul li.btn a:hover {
     line-height: 170%;
     margin: 30px 0;
 }
-.hero--info .btn{
+.hero--info .btn,
+.hero--about .info .btn {
     background: #e87d0e;
     color: #fff;
     border-radius: 50px;
@@ -117,7 +123,8 @@ header nav ul li.btn a:hover {
     font-size: 17px;
 }
 
-.hero--info .btn:hover{
+.hero--info .btn:hover, 
+.hero--about .info .btn:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -264,4 +271,258 @@ header nav ul li.btn a:hover {
     width: 60px;
     text-align: center;
     margin: auto;
+}
+
+.email {
+    padding-bottom: 120px;
+}
+
+.email h3 {
+    margin-top: 60px;
+    font-size: 30px;
+}
+
+.email .block {
+    background: #1c140f;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 40px 3%;
+    width: 94%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.email .block h4 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.email .block p {
+    width: 500px;
+}
+
+.email .block input {
+    background: #fff;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    width: 380px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    padding: 20px 30px;
+    position: relative;
+    right: -100px;
+    z-index: 1;
+    padding-right: 120px;
+}
+
+.email .block input::placeholder {
+    color: #898989;
+}
+
+.email .block button {
+    cursor: pointer;
+    border: 0;
+    padding: 13px 17px;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+.hero--about {
+    position:relative;
+}
+
+.hero--about .info {
+    width: 500px;
+    padding: 250px 0;
+}
+
+.hero--about .info h1 {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.hero--about .info .btn {
+    margin-top: 20px;
+}
+
+.hero--about img {
+    position: absolute;
+    right: -150px;
+    top: 0;
+}
+
+.work {
+    padding: 80px;
+}
+
+.work h2 {
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.work .blocks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.work .blocks .block {
+    width: 25%;
+    border-radius: 10px;
+    padding: 50px 35px;
+    background: #1c140f;
+}
+
+.work .blocks .block h3 {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.work .blocks .block .badge {
+    border-radius: 7px;
+    padding: 10px 20px;
+}
+
+.work .blocks .block .badge.purple {
+    background: #560f67;
+}
+
+.work .blocks .block .badge.brown {
+    background: #31190d;
+}
+
+.work .blocks .block .badge.green {
+    background: #192a1d;
+}
+
+
+.hero--contacts h1 {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    font-size: 33px;
+}
+
+.hero--contacts p {
+    text-align: center;
+}
+
+.hero--contacts img {
+    width: 70%;
+    margin: 80px 15%;
+}
+
+
+.feedback {
+    padding: 70px 0;
+    background-image:url(/img/contactback.svg);
+}
+
+.feedback h2 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.feedback p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.feedback form {
+    margin: 80px auto;
+    width: 600px;
+}
+
+.feedback form .inline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.feedback form .inline > div {
+    width: 50%;
+}
+.feedback form label {
+    color: #4f4f4f;
+    font-size: 14px;
+}
+
+.feedback form input,
+.feedback form textarea {
+    background: #2c2420;
+    border-radius: 10px;
+    border: 0.6px solid #cecece;
+    display: block;
+    width: 90%;
+    padding: 15px 10px;
+    outline: none;
+    color: #fff;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+
+.feedback form .one-line {
+    width: 96%;
+}
+
+.feedback form textarea {
+    resize: none;
+    height: 200px;
+}
+
+.feedback form button {
+    background: #dc7000;
+    border-radius: 5px;
+    border: 0;
+    float: right;
+    cursor: pointer;
+    color: #fff;
+    padding: 15px 35px;
+    transition: all 500ms ease;
+}
+
+.feedback form button:hover {
+    background: #9e5200;
+}
+
+/*Подвал*/
+footer {
+    background: #000;
+    padding: 50px 0;
+}
+
+footer .block {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .block p {
+    width: 300px;
+    margin: 15px 0;
+}
+
+footer .block h4 {
+    font-weight: 500;
+    font-size: 17px;
+}
+
+footer .block ul {
+    list-style: none;
+}
+
+footer .block ul li {
+    margin-top: 7px;
+    opacity: 0.8;
+}
+
+footer hr {
+    margin: 30px;
+    border:0;
+    height: 0.6px;
+    background: #ccc;
+}
+footer > p {
+    text-align: center;
 }
