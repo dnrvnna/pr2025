@@ -36,20 +36,20 @@
                 <div class="inline">
                     <div>
                         <label>First Name</label>
-                        <input type="text">
+                        <input type="text" id="firstname">
                     </div>
                     <div>
                         <label>Last Name</label>
-                        <input type="text">
+                        <input type="text" id="lastname">
                     </div>
-                </div>
+                </div> 
                 <label>Email Address</label>
-                <input type="email" class="one-line">
+                <input type="email" id="emailField" class="one-line">
 
                 <label>Message</label>
                 <textarea class="one-line"></textarea>
 
-                <button type="button">Get in touch</button>
+                <button type="button" onclick="thanksmes()">Get in touch</button>
             </form>
         </div>
     </div>
@@ -103,6 +103,21 @@
             if(!email.includes('@')) alert('Нет символа @');
             else if(!email.includes('.')) alert('Нет символа .');
             else alert('Всё отлично!');
+        }
+        function hasSymbols(variable) {
+            return variable !== null && variable !== undefined && variable !== '';
+        }
+        function thanksmes() {
+            let email = document.querySelector('#emailField').value;
+            if(!email.includes('@')) alert('Нет символа @');
+            else if(!email.includes('.')) alert('Нет символа .');
+
+            let firstname = document.querySelector('#firstname').value;
+            let lastname = document.querySelector('#lastname').value;
+
+            if(!hasSymbols(firstname) || !hasSymbols(lastname)) alert('Некорректная форма');
+            else alert('Спасибо! Мы обязательно свяжемся с вами')
+
         }
     </script>
     
